@@ -1,14 +1,16 @@
 const express = require( 'express' )
 const morgan = require( 'morgan' )
-const app = express()
+const cors = require( 'cors' )
 
 morgan.token( 'body', ( request, response ) => {
   const ret = request.method === 'POST'
-    ? JSON.stringify( request.body )
-    : ' '
-    return ret
+  ? JSON.stringify( request.body )
+  : ' '
+  return ret
 })
 
+const app = express()
+app.use( cors() )
 app.use( morgan( ':method :url :status :res[content-length] - :response-time ms :body' ) )
 app.use( express.json() )
 
