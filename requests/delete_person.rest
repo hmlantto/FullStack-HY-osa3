@@ -1,1 +1,1 @@
-DELETE https://fierce-meadow-65136.herokuapp.com/api/persons/52
+DELETE http://localhost:3001/api/persons/608fd07047a6900a38682026
